@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Lyric Generation</title>
+<style>
+body{
+    background-image: url("https://www.wyzowl.com/wp-content/uploads/2018/08/The-20-Best-Royalty-Free-Music-Sites-in-2018.png"); background-size: 100%;
+}
+</style>
+
+</head>
+<body>
+    <h2 align="center">
+        <font face="Lato" color="#ffffff" size="8">Create Lyrics Like Your Favorite Artists</font>
+    </h2>
+    <h3 align="center">
+        <font face="Lato" color="#ff4757" size="4">1. Select artist</font>
+        </h3>
+    <h4 align="center">
+        <font face="Lato" color="#ff4757" size="4">2. Input lyric that you have already composed in the "Existing Lyrics" tab</font>
+        </h4>
+    <h5 align="center">
+        <font face="Lato" color="#ff4757" size="4">3. Select the amount of words to be generated in the "Next Words" tab</font>
+        </h5>
+    <h6 align="center">
+        <font face="Lato" color="#ff4757" size="4">4. Click Submit and check generated lyric</font>
+        </h6
+    
+
+    <br>
+    <form align="center" method="post" enctype="multipart/form-data" action='lygen'>
+{% csrf_token %}
+<div>
+    <label for="model">Choose Artist:</label>
+    <select name="model" id="model">
+        <option value="drake">Drake</option>
+        <option value="bts">BTS</option>
+        <option value="cardi_b">Cardi B</option>
+        <option value="bad_bunny">Bad Bunny</option>
+        <option value="eminem">Eminem</option>
+    </select>
+<div class='col-md-4 col-sm-4'><label for="fname">Existing Lyrics:</label></div><input name="lyric" type="text" value="input text"> <br><br>
+<div class='col-md-4 col-sm-4'><label for="fname">Next Words:</label></div><input name="next" type="text" value="next words"> <br><br>
+<br>
+<input type="submit" value="Submit"></div>
+
+</form>
+<br>
+{% if seed_text %}
+<h1 align="center">{{seed_text}}</h1>
+{% endif %}
+<br>
+<h2 align="center">
+    <font face="Lato" color="#ff4757" size="4">Generated lyric is based on 10 random songs of each artist</font>
+</h2>
+</body>
+</html>
