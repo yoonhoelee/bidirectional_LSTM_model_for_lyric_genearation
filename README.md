@@ -35,14 +35,6 @@ The lyrics of the songs that are used to train the models are based on the follo
 *   Eminem
 
 
-Due to memory constraints the model webapp I deployed on Heroku consists of models trained with the lyrics of the following artists
-
-*   BTS
-*   Bad Bunny
-
-*   [Web-app deployed on Heroku](https://lyric-generation.herokuapp.com/)
-
-
 ## Limitations
 
 The models were trained on a single GPU environments.
